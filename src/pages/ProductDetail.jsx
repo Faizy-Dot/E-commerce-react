@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -52,7 +53,7 @@ function ProductDetail() {
                   </a>
                 </div>
                 <p className="leading-relaxed mb-4">
-                 {product.description}
+                  {product.description}
                 </p>
                 <div className="flex border-t border-gray-200 py-2">
                   <span className="text-gray-500">Color</span>
@@ -70,11 +71,14 @@ function ProductDetail() {
                   <span className="title-font font-medium text-2xl text-gray-900">
                     ${product.price}
                   </span>
-                  <a href="/Products">
-                  <button className="flex  ml-5 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                    Back
-                  </button>
-                  </a>
+                  <Link to={`/products`}
+                    className="lg:w-1/4 md:w-1/2 p-4 w-full shadow">
+
+                    <button className="flex  ml-5 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                      Back
+                    </button>
+                    
+                  </Link>
                   <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                     <svg
                       fill="currentColor"
